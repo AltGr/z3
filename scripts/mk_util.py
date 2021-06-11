@@ -1944,12 +1944,12 @@ class MLComponent(Component):
             if DEBUG_MODE:
                 OCAML_FLAGS += '-g'
 
-            if OCAMLFIND:
-                OCAMLCF = OCAMLFIND + ' ' + 'ocamlc -package zarith' + ' ' + OCAML_FLAGS
-                OCAMLOPTF = OCAMLFIND + ' ' + 'ocamlopt -package zarith' + ' ' + OCAML_FLAGS
-            else:
-                OCAMLCF = OCAMLC + ' ' + OCAML_FLAGS
-                OCAMLOPTF = OCAMLOPT + ' ' + OCAML_FLAGS
+            # if OCAMLFIND:
+            #     OCAMLCF = OCAMLFIND + ' ' + 'ocamlc -package zarith' + ' ' + OCAML_FLAGS
+            #     OCAMLOPTF = OCAMLFIND + ' ' + 'ocamlopt -package zarith' + ' ' + OCAML_FLAGS
+            # else:
+            OCAMLCF = OCAMLC + ' ' + OCAML_FLAGS
+            OCAMLOPTF = OCAMLOPT + ' ' + OCAML_FLAGS
 
             src_dir = self.to_src_dir
             mk_dir(os.path.join(BUILD_DIR, self.sub_dir))
